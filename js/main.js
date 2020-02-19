@@ -4,6 +4,9 @@ var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/browse-antfor.me/git',
 var commandText = function(text) {
     return "[[g;#EEEEEE;]" + text + "]";
 };
+var commandTextb = function(text) {
+    return "[[g;#AAAAAA;]" + text + "]";
+};
 
 var GitHub = new ( function() {
     this.fs = {};
@@ -66,25 +69,31 @@ var App = {
     },
     help: function() {
         this.echo("Available commands:");
-        this.echo("\tabout       information about this page");
-        this.echo("\tcontact     display contact information");
-        this.echo("\twhoami      display my short brief");
-        this.echo("\thelp        this help screen.");                        
+        this.echo("\tabout       information about this page.");
+        this.echo("\tcontact     display contact information.");
+        this.echo("\twhoami      display my short brief.");
+        this.echo("\thelp        this help screen.");
+        this.echo("\tskills      display showcase-able skills.");
+        this.echo("\tclear       Clears information on the screen.");
         this.echo("");
-        this.echo("some other basic Linux commands are available: [[b;#26761F;]cat] | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]startx]");
+        this.echo("some other basic Linux commands are available: [[b;#26761F;]cat] | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]startx] ");
 
         if(ga !== undefined) ga('send', 'event', 'help', GitHub.getCurrentPath());
     },
     whoami: function() {
         this.echo("");
-        this.echo("Hello, my name is Anthony (aka Anthony Forest), I'm owner of several niche e-commerce websites and a private web development firm.");
-        this.echo("I'm a programmer, and Electronics Engineer. I love Open Source and passionate about contributions to Open Source projects");
+        this.echo("Hello, my name is Anthony (aka [[g;#B2D100;]Anthony Forest]), I'm owner of several niche e-commerce websites and a private web development firm.");
+        this.echo("I'm a programmer, and Electronics Engineer (AAS). I love Open Source and passionate about contributions to Open Source projects.");
         this.echo("My technical summary:");
-        this.echo("\t- Have strong knowledge about Linux operating system and open source software.");
-        this.echo("\t- Responsible for day-to-day defense of our network, servers.");
-        this.echo("\t- Experienced with web application development, specialist with PHP/MySQL. Can develop desktop/web application with Java/Python.");
-        this.echo("\t- Able to make mobile apps using many different technologies (Native/Ionic)");
-        this.echo("\nI'm available to work as freelancer, so feel free to get in touch via [[b;#44D544;]contact] command");
+        this.echo("");
+        this.echo(commandTextb("\t- Have strong knowledge about Linux operating system and open source software."));
+        this.echo("");
+        this.echo(commandTextb("\t- Responsible for day-to-day defense of our network, servers."));
+        this.echo("");
+        this.echo(commandTextb("\t- Experienced with web application development, specialist with PHP/MySQL. Can develop desktop/web application with Java/Python."));
+        this.echo("");
+        this.echo(commandTextb("\t- Able to make mobile apps using many different technologies (Native/Ionic)"));
+        this.echo("\nI'm available to work as freelancer, so feel free to get in touch via [[b;#26761F;]contact] command");
         this.echo("");
 
         if(ga !== undefined) ga('send', 'event', 'whoami', GitHub.getCurrentPath());
@@ -108,11 +117,13 @@ var App = {
         this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]###################]                                ##" + "\t\t\t\t[[g;#5BD100;]#] Expert       (Hardly needs to view the documentation)           ");
         this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]###############]                                    ##" + "\t\t\t\t[[g;#B2D100;]#] Proficient   (Occasionally needs to view the documentation)     ");
         this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]##############]                                     ##" + "\t\t\t\t[[g;#D13F00;]#] Familiarity  (Often needs to view the documentation)            ");
+        this.echo("|  " + commandText('Go') + "                    ##[[g;#D13F00;]#########]                                          ##");
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Frontend Technologies] ");
         this.echo("|  " + commandText('Javascript') + "            ##[[g;#5BD100;]####################################]               ##");
         this.echo("|  " + commandText('CSS') + "                   ##[[g;#B2D100;]###################################]                ##");
         this.echo("|  " + commandText('HTML5') + "                 ##[[g;#B2D100;]##################################]                 ##");
+        this.echo("|  " + commandText('PHP') + "                   ##[[g;#D13F00;]####################]                               ##");
         this.echo("|");
         // this.echo("|  " + commandText("Database"));
         this.echo("|  [[g;#B2D100;]Web Frameworks] ");
@@ -135,6 +146,7 @@ var App = {
         this.echo("|  [[g;#B2D100;]Databases] ");
         this.echo("|  " + commandText('MySQL') + "                 ##[[g;#B2D100;]##############################]                     ##");
         this.echo("|  " + commandText('MongoDB') + "               ##[[g;#D13F00;]#########]                                          ##");
+        this.echo("|  " + commandText('Oracle') + "                ##[[g;#D13F00;]#####]                                              ##");
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Operating Systems] ");
         // this.echo("|  " + commandText("Native Mobile / Game Dev"));
