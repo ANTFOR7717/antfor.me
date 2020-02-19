@@ -1,5 +1,10 @@
 var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/browse-antfor.me/git',
     e = "guest@antfor.me";
+
+var commandText = function(text) {
+    return "[[g;#EEEEEE;]" + text + "]";
+};
+
 var GitHub = new ( function() {
     this.fs = {};
     this.loaded = false;
@@ -66,7 +71,7 @@ var App = {
         this.echo("\twhoami      display my short brief");
         this.echo("\thelp        this help screen.");                        
         this.echo("");
-        this.echo("some other basic Linux commands are available: cat cd id ls startx")
+        this.echo("some other basic Linux commands are available: [[b;#26761F;]cat] | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]startx]");
 
         if(ga !== undefined) ga('send', 'event', 'help', GitHub.getCurrentPath());
     },
@@ -94,6 +99,60 @@ var App = {
 
         if(ga !== undefined) ga('send', 'event', GitHub.getCurrentPath(), 'contact');
     },
+
+    skills: function() {
+        this.echo("|");
+        this.echo("|  [[g;#B2D100;]Statistical Computing] ");
+        this.echo("|  " + commandText('Python') + "                ##[[g;#5BD100;]########################################]           ##" + "\t\t\t\t[[g;#B2D100;]Legend:]       ");
+        this.echo("|  " + commandText('bash') + "                  ##[[g;#5BD100;]#############################]                      ##" + "\t\t\t\t[[g;#00A6FC;]#] Perfect      (Rarely needs to view the documentation)           ");
+        this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]###################]                                ##" + "\t\t\t\t[[g;#5BD100;]#] Expert       (Hardly needs to view the documentation)           ");
+        this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]###############]                                    ##" + "\t\t\t\t[[g;#B2D100;]#] Proficient   (Occasionally needs to view the documentation)     ");
+        this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]##############]                                     ##" + "\t\t\t\t[[g;#D13F00;]#] Familiarity  (Often needs to view the documentation)            ");
+        this.echo("|");
+        this.echo("|  [[g;#B2D100;]Frontend Technologies] ");
+        this.echo("|  " + commandText('Javascript') + "            ##[[g;#5BD100;]####################################]               ##");
+        this.echo("|  " + commandText('CSS') + "                   ##[[g;#B2D100;]###################################]                ##");
+        this.echo("|  " + commandText('HTML5') + "                 ##[[g;#B2D100;]##################################]                 ##");
+        this.echo("|");
+        // this.echo("|  " + commandText("Database"));
+        this.echo("|  [[g;#B2D100;]Web Frameworks] ");
+        this.echo("|  " + commandText('React') + "                 ##[[g;#5BD100;]#####################]                              ##");
+        this.echo("|  " + commandText('Angular') + "               ##[[g;#5BD100;]###################]                                ##");
+        this.echo("|  " + commandText('Bootstrap') + "             ##[[g;#B2D100;]################]                                   ##");
+        this.echo("|  " + commandText('Django') + "                ##[[g;#B2D100;]###############]                                    ##");
+        this.echo("|  " + commandText('Ionic') + "                 ##[[g;#B2D100;]##############]                                     ##");
+        this.echo("|  " + commandText('ASP.NET') + "               ##[[g;#D13F00;]###########]                                        ##");
+        this.echo("|");
+
+        this.echo("|  [[g;#B2D100;]Cloud Computing] ");
+        this.echo("|  " + commandText('AWS') + "                   ##[[g;#5BD100;]#####################]                              ##");
+        this.echo("|  " + commandText('GCP') + "                   ##[[g;#5BD100;]#####################]                              ##");
+        this.echo("|  " + commandText('Azure') + "                 ##[[g;#B2D100;]###################]                                ##");
+        this.echo("|  " + commandText('IBM') + "                   ##[[g;#B2D100;]###############]                                    ##");
+        this.echo("|  " + commandText('Heroku') + "                ##[[g;#D13F00;]#########]                                          ##");
+        this.echo("|");
+        // this.echo("|");
+        this.echo("|  [[g;#B2D100;]Databases] ");
+        this.echo("|  " + commandText('MySQL') + "                 ##[[g;#B2D100;]##############################]                     ##");
+        this.echo("|  " + commandText('MongoDB') + "               ##[[g;#D13F00;]#########]                                          ##");
+        this.echo("|");
+        this.echo("|  [[g;#B2D100;]Operating Systems] ");
+        // this.echo("|  " + commandText("Native Mobile / Game Dev"));
+        // this.echo("|");
+        this.echo("|  " + commandText('Linux') + "                 ##[[g;#5BD100;]#############################################]      ##");
+        this.echo("|  " + commandText('MAC OS X') + "              ##[[g;#B2D100;]################################]                   ##");
+        this.echo("|  " + commandText('Windows') + "               ##[[g;#B2D100;]################################]                   ##");
+        this.echo("|");
+        this.echo("|  [[g;#B2D100;]Languages] ");
+        // this.echo("|");
+        this.echo("|  " + commandText('English') + "               ##[[g;#00A6FC;]###################################################]##");
+        this.echo("|  " + commandText('Spanish') + "               ##[[g;#B2D100;]#######]                                            ##");
+        this.echo("|  " + commandText('Japanese') + "              ##[[g;#D13F00;]###]                                                ##");
+        this.echo("");
+
+        if(ga !== undefined) ga('send', 'event', 'skills', GitHub.getCurrentPath());
+    },
+
     about: function() {
         this.echo("");
         this.echo("This page built with <a href='http://terminal.jcubic.pl/' target='_blank'>jQuery Terminal Emulator</a> plugin, and hosted by <a href='http://pages.github.com' target='_blank'>GitHub Pages<a/>.", {raw:true});
@@ -169,7 +228,7 @@ jQuery(document).ready(function($) {
             "|    | | )     |   )|   )|    |   )|   )|   )\\   )\n" +
             "|    |  /      |  / |  / |__  |  / |__/ |  /  \\_/ \n" +
             "                                             __/  \n\n" +
-            "Hi, let's explore my little box on the Internet!]\n\nType [[b;#26761F;]whoami] to read something about me, [[b;#26761F;]ls] to explore resources on this page and [[b;#26761F;]help] if you dont know what to do next.\n",
+            "Hi, let's explore my little box on the Internet!]\n\nType [[b;#26761F;]whoami] to read something about me, [[b;#26761F;]skills] to view my portfolio of technologies, [[b;#26761F;]ls] to explore resources on this page and [[b;#26761F;]help] if you dont know what to do next.\n",
         prompt: function(p){
             var path = '~'
             if(GitHub.stack.length > 0) {
