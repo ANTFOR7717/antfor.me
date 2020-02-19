@@ -152,7 +152,7 @@ var App = {
         // this.echo("|  " + commandText("Native Mobile / Game Dev"));
         // this.echo("|");
         this.echo("|  " + commandText('Linux') + "                 ##[[g;#5BD100;]#############################################]      ##");
-        this.echo("|  " + commandText('MAC OS X') + "              ##[[g;#B2D100;]################################]                   ##");
+        this.echo("|  " + commandText('MAC OS') + "              ##[[g;#B2D100;]################################]                   ##");
         this.echo("|  " + commandText('Windows') + "               ##[[g;#B2D100;]################################]                   ##");
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Languages] ");
