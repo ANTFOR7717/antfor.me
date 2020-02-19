@@ -233,14 +233,14 @@ var App = {
 
 jQuery(document).ready(function($) {
     $('body').terminal(App, {
-        greetings: "[[b;#26761F;]" +
+        greetings: "[[bg;#26761F;]" +
             "                 __                               \n" +
             "|  /            /  |      /    /                  \n" +
             "(     _ _      (___| ___ (___ (___  ___  ___      \n" +
             "|    | | )     |   )|   )|    |   )|   )|   )\\   )\n" +
             "|    |  /      |  / |  / |__  |  / |__/ |  /  \\_/ \n" +
-            "                                             __/  \n\n" +
-            "Hi, let's explore my little box on the Internet!]\n\nType [[b;#26761F;]whoami] to read something about me, [[b;#26761F;]skills] to view my portfolio of technologies, [[b;#26761F;]ls] to explore resources on this page and [[b;#26761F;]help] if you dont know what to do next.\n",
+            "                                             __/  \n\n]" +
+            "[[b;#26761F;]Hi, let's explore my little box on the Internet!]\n\nType [[g;#26761F;]whoami] to read something about me, [[g;#26761F;]skills] to view my portfolio of technologies, [[b;#26761F;]ls] to explore resources on this page and [[b;#26761F;]help] if you dont know what to do next.\n",
         prompt: function(p){
             var path = '~'
             if(GitHub.stack.length > 0) {
