@@ -1,4 +1,4 @@
-var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/antfor.me/git',
+var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/browse-antfor.me/git',
     e = "guest@antfor.me";
 var GitHub = new ( function() {
     this.fs = {};
@@ -106,19 +106,17 @@ var App = {
         if(ga !== undefined) ga('send', 'event', 'id', GitHub.getCurrentPath());
     },
     ls: function() {
-        this.echo("");
         var wd = GitHub.getCurrentWorkingDirectory();
         for(i in wd) {
             if(typeof wd[i] == 'object') {
                 var item = wd[i];
-                this.echo(item.mode+'\t' + (item.type=='tree'?'[[b;#0A8AFF;]'+item.path+']':item.path));
+                this.echo(item.mode+'  |\t' + (item.type=='tree'?'[[b;#0A8AFF;]'+item.path+']':item.path));
             }
-            this.echo("");
         }
 
         if(ga !== undefined) ga('send', 'event', 'ls', GitHub.getCurrentPath());
     },
-    cd: function(path) {        
+    cd: function(path) {
         if(path === '..') {
             GitHub.stack.pop();
             return;
