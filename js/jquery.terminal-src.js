@@ -2290,7 +2290,7 @@
                         } : undefined
                     });
                 } else {
-                    terminal.error(command.name + ": command not found");
+                    terminal.error("- bash: " + command.name + ": command not found");
                 }
             };
         }

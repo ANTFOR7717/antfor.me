@@ -1,4 +1,4 @@
-var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/browse-antfor.me/git',
+var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/directory-antfor.me/git',
     e = "guest@antfor.me";
 
 var commandText = function(text) {
@@ -68,15 +68,19 @@ var App = {
         if(ga !== undefined) ga('send', 'event', 'echo', GitHub.getCurrentPath(), 'text', text);
     },
     help: function() {
-        this.echo("Available commands:");
-        this.echo("\tabout       information about this page.");
-        this.echo("\tcontact     display contact information.");
-        this.echo("\twhoami      display my short brief.");
-        this.echo("\thelp        this help screen.");
-        this.echo("\tskills      display showcase-able skills.");
-        this.echo("\tclear       Clears information on the screen.");
         this.echo("");
-        this.echo("some other basic Linux commands are available: [[b;#26761F;]cat] | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]startx] ");
+        this.echo("Available commands:");
+        this.echo("");
+        this.echo("\t[[b;#26761F;]about]       information about this page.");
+        this.echo("\t[[b;#26761F;]contact]     display contact information.");
+        this.echo("\t[[b;#26761F;]cat]         view text files in directories.");
+        this.echo("\t[[b;#26761F;]whoami]      display my short brief.");
+        this.echo("\t[[b;#26761F;]help]        this help screen.");
+        this.echo("\t[[b;#26761F;]skills]      display showcase-able skills.");
+        this.echo("\t[[b;#26761F;]clear]       clears information on the screen.");
+        this.echo("");
+        this.echo("some other basic Linux commands are available: | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]startx] ");
+        this.echo("");
 
         if(ga !== undefined) ga('send', 'event', 'help', GitHub.getCurrentPath());
     },
@@ -113,10 +117,10 @@ var App = {
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Statistical Computing] ");
         this.echo("|  " + commandText('Python') + "                ##[[g;#5BD100;]########################################]           ##" + "\t\t\t\t[[g;#B2D100;]Legend:]       ");
-        this.echo("|  " + commandText('bash') + "                  ##[[g;#5BD100;]#############################]                      ##" + "\t\t\t\t[[g;#00A6FC;]#] Perfect      (Rarely needs to view the documentation)           ");
-        this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]###################]                                ##" + "\t\t\t\t[[g;#5BD100;]#] Expert       (Hardly needs to view the documentation)           ");
-        this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]###############]                                    ##" + "\t\t\t\t[[g;#B2D100;]#] Proficient   (Occasionally needs to view the documentation)     ");
-        this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]##############]                                     ##" + "\t\t\t\t[[g;#D13F00;]#] Familiarity  (Often needs to view the documentation)            ");
+        this.echo("|  " + commandText('bash') + "                  ##[[g;#5BD100;]#############################]                      ##" + "\t\t\t\t[[g;#00A6FC;]#] [[g;#AAAAAA;]Perfect]      (Rarely needs to view the documentation)           ");
+        this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]###################]                                ##" + "\t\t\t\t[[g;#5BD100;]#] [[g;#AAAAAA;]Expert]       (Hardly needs to view the documentation)           ");
+        this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]###############]                                    ##" + "\t\t\t\t[[g;#B2D100;]#] [[g;#AAAAAA;]Proficient]   (Occasionally needs to view the documentation)     ");
+        this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]##############]                                     ##" + "\t\t\t\t[[g;#D13F00;]#] [[g;#AAAAAA;]Familiarity]  (Often needs to view the documentation)            ");
         this.echo("|  " + commandText('Go') + "                    ##[[g;#D13F00;]#########]                                          ##");
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Frontend Technologies] ");
@@ -152,7 +156,7 @@ var App = {
         // this.echo("|  " + commandText("Native Mobile / Game Dev"));
         // this.echo("|");
         this.echo("|  " + commandText('Linux') + "                 ##[[g;#5BD100;]#############################################]      ##");
-        this.echo("|  " + commandText('MAC OS') + "              ##[[g;#B2D100;]################################]                   ##");
+        this.echo("|  " + commandText('MAC OS') + "                ##[[g;#B2D100;]################################]                   ##");
         this.echo("|  " + commandText('Windows') + "               ##[[g;#B2D100;]################################]                   ##");
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Languages] ");
@@ -240,7 +244,7 @@ jQuery(document).ready(function($) {
             "|    | | )     |   )|   )|    |   )|   )|   )\\   )\n" +
             "|    |  /      |  / |  / |__  |  / |__/ |  /  \\_/ \n" +
             "                                             __/  \n\n]" +
-            "[[b;#26761F;]Hi, let's explore my little box on the Internet!]\n\nType [[g;#26761F;]whoami] to read something about me, [[g;#26761F;]skills] to view my portfolio of technologies, [[b;#26761F;]ls] to explore resources on this page and [[b;#26761F;]help] if you dont know what to do next.\n",
+            "[[b;#26761F;]Hi, let's explore my little box on the Internet!]\n\nType [[g;#26761F;]whoami] to read something about me, [[g;#26761F;]skills] to view my current ability with technologies, [[b;#26761F;]ls] to explore resources on this page and [[b;#26761F;]help] if you dont know what to do next.\n",
         prompt: function(p){
             var path = '~'
             if(GitHub.stack.length > 0) {
