@@ -79,7 +79,7 @@ var App = {
         this.echo("\t[[b;#26761F;]skills]      display showcase-able skills.");
         this.echo("\t[[b;#26761F;]clear]       clears information on the screen.");
         this.echo("");
-        this.echo("some other basic Linux commands are available: | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]startx] ");
+        this.echo("some other basic Linux commands are available: | [[b;#26761F;]rm] | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]sudo] | [[b;#26761F;]startx] | [[b;#26761F;]echo] | [[b;#26761F;]restart] | [[b;#26761F;]shutdown]");
         this.echo("");
 
         if(ga !== undefined) ga('send', 'event', 'help', GitHub.getCurrentPath());
@@ -179,6 +179,26 @@ var App = {
         this.echo("uid=1000(guest) gid=1000(guest)");
 
         if(ga !== undefined) ga('send', 'event', 'id', GitHub.getCurrentPath());
+    },
+    rm: function(path){
+        this.echo("[[b;#FF0000;]- bash: rm: cannot remove " + path + ": Permission denied]");
+
+        if(ga !== undefined) ga('send', 'event', 'rm', GitHub.getCurrentPath());
+    },
+    sudo: function(command,arg){
+        arg = arg || 0;
+
+        this.echo("[[b;#FF0000;]- bash: sudo: user is not in the sudoers file" + ": this incident will be reported. ]");
+
+        if(ga !== undefined) ga('send', 'event', 'sudo', GitHub.getCurrentPath());
+    },
+    restart: function(){
+        location.reload();
+        if(ga !== undefined) ga('send', 'event', 'restart', GitHub.getCurrentPath());
+    },
+    shutdown: function(){
+        close();
+        if(ga !== undefined) ga('send', 'event', 'shutdown', GitHub.getCurrentPath());
     },
     ls: function() {
         var wd = GitHub.getCurrentWorkingDirectory();
