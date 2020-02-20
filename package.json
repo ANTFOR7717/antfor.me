@@ -1,0 +1,7 @@
+{
+  "name": "ANTFOR.ME",
+  "version": "1.0.0",
+  "dependencies": {
+    "pageclip": "^1.0.0"
+  }
+}

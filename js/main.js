@@ -121,13 +121,14 @@ var App = {
         this.echo( "|  [[g;#B2D100;]#] [[g;#AAAAAA;]Proficient]   (Occasionally needs to view the documentation)        |");
         this.echo( "|  [[g;#D13F00;]#] [[g;#AAAAAA;]Familiarity]  (Often needs to view the documentation)               |");
         this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
-        this.echo("|  [[g;#B2D100;]Statistical Computing]t\t\t\t\t\t\t\t\t\t\t\t   |");
+        this.echo("|  [[g;#B2D100;]Statistical Computing]\t\t\t\t\t\t\t\t\t\t\t    |");
         this.echo("|  " + commandText('Python') + "                ##[[g;#5BD100;]#########################]                ##  |");
         this.echo("|  " + commandText('bash') + "                  ##[[g;#5BD100;]###################]                      ##  |");
         this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]#########]                                ##  |");
         this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]#####]                                    ##  |");
         this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]####]                                     ##  |");
         this.echo("|  " + commandText('Go') + "                    ##[[g;#D13F00;]###]                                      ##  |");
+        this.echo("|  " + commandText('Solidity') + "              ##[[g;#D13F00;]##]                                       ##  |");
         this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
         this.echo("|  [[g;#B2D100;]Frontend Technologies]\t\t\t\t\t\t\t\t\t\t\t\t|");
         this.echo("|  " + commandText('Javascript') + "            ##[[g;#5BD100;]##########################]               ##  |");
