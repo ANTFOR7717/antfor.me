@@ -79,7 +79,7 @@ var App = {
         this.echo("\t[[b;#26761F;]skills]      display showcase-able skills.");
         this.echo("\t[[b;#26761F;]clear]       clears information on the screen.");
         this.echo("");
-        this.echo("some other basic Linux commands are available: | [[b;#26761F;]rm] | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]sudo] | [[b;#26761F;]startx] | [[b;#26761F;]echo] | [[b;#26761F;]restart] | [[b;#26761F;]shutdown]");
+        this.echo("some other basic Linux commands are available: | [[b;#26761F;]rm] | [[b;#26761F;]cd] | [[b;#26761F;]id] | [[b;#26761F;]sudo] | [[b;#26761F;]startx] | [[b;#26761F;]echo] | [[b;#26761F;]restart] ");
         this.echo("");
 
         if(ga !== undefined) ga('send', 'event', 'help', GitHub.getCurrentPath());
@@ -87,7 +87,7 @@ var App = {
     whoami: function() {
         this.echo("");
         this.echo("Hello, my name is Anthony (aka [[g;#B2D100;]Anthony Forest]), I'm owner of several niche e-commerce websites and a private web development firm.");
-        this.echo("I'm a programmer, and Electronics Engineer (AAS). I love Open Source and passionate about contributions to Open Source projects.");
+        this.echo("I'm a programmer, and Electronic Engineer (AAS). I love Open Source and passionate about contributions to Open Source projects.");
         this.echo("My technical summary:");
         this.echo("");
         this.echo(commandTextb("\t- Have strong knowledge about Linux operating system and open source software."));
