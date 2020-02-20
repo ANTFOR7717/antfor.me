@@ -114,13 +114,19 @@ var App = {
     },
 
     skills: function() {
+        this.echo("");
+        this.echo( "|  [[g;#B2D100;]Legend:]       ");
+        this.echo( "|  [[g;#00A6FC;]#] [[g;#AAAAAA;]Perfect]      (Rarely needs to view the documentation)           ");
+        this.echo( "|  [[g;#5BD100;]#] [[g;#AAAAAA;]Expert]       (Hardly needs to view the documentation)           ");
+        this.echo( "|  [[g;#B2D100;]#] [[g;#AAAAAA;]Proficient]   (Occasionally needs to view the documentation)     ");
+        this.echo( "|  [[g;#D13F00;]#] [[g;#AAAAAA;]Familiarity]  (Often needs to view the documentation)            ");
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Statistical Computing] ");
-        this.echo("|  " + commandText('Python') + "                ##[[g;#5BD100;]########################################]           ##" + "\t\t\t\t[[g;#B2D100;]Legend:]       ");
-        this.echo("|  " + commandText('bash') + "                  ##[[g;#5BD100;]#############################]                      ##" + "\t\t\t\t[[g;#00A6FC;]#] [[g;#AAAAAA;]Perfect]      (Rarely needs to view the documentation)           ");
-        this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]###################]                                ##" + "\t\t\t\t[[g;#5BD100;]#] [[g;#AAAAAA;]Expert]       (Hardly needs to view the documentation)           ");
-        this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]###############]                                    ##" + "\t\t\t\t[[g;#B2D100;]#] [[g;#AAAAAA;]Proficient]   (Occasionally needs to view the documentation)     ");
-        this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]##############]                                     ##" + "\t\t\t\t[[g;#D13F00;]#] [[g;#AAAAAA;]Familiarity]  (Often needs to view the documentation)            ");
+        this.echo("|  " + commandText('Python') + "                ##[[g;#5BD100;]########################################]           ##");
+        this.echo("|  " + commandText('bash') + "                  ##[[g;#5BD100;]#############################]                      ##");
+        this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]###################]                                ##");
+        this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]###############]                                    ##");
+        this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]##############]                                     ##");
         this.echo("|  " + commandText('Go') + "                    ##[[g;#D13F00;]#########]                                          ##");
         this.echo("|");
         this.echo("|  [[g;#B2D100;]Frontend Technologies] ");
