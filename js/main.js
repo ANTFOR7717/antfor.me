@@ -63,7 +63,12 @@ var GitHub = new ( function() {
 
 var App = {
     resume: function() {
-        this.echo("soon child")
+        const json = `        {
+        
+        "yo": "whaddup"
+        
+        }`;
+        this.echo(json)
     },
 
     echo: function(text) {
@@ -254,7 +259,7 @@ var App = {
         } else {
             var term = this;
             term.pause();
-            $.getJSON(item.url, function(data, textStatus, jqXHR){
+            $.getJSON(item.url, function(data){
                 var content = data.content.trim()
                 if(data.encoding === 'base64')
                     content = decode64(content);
@@ -274,12 +279,16 @@ var App = {
 jQuery(document).ready(function($) {
     $('body').terminal(App, {
         greetings: "[[bg;#26761F;]" +
-            "                 __                               \n" +
-            "|  /            /  |      /    /                  \n" +
-            "(     _ _      (___| ___ (___ (___  ___  ___      \n" +
-            "|    | | )     |   )|   )|    |   )|   )|   )\\   )\n" +
-            "|    |  /      |  / |  / |__  |  / |__/ |  /  \\_/ \n" +
-            "                                             __/  \n\n]" +
+            "                 _   _                       ______                  _        _            \n" +
+            "     /\\         | | | |                     |  ____|                | |      | |           \n" +
+            "    /  \\   _ __ | |_| |__   ___  _ __  _   _| |__ ___  _ __ ___  ___| |_   __| | _____   __\n" +
+            "   / /\\ \\ | '_ \\| __| '_ \\ / _ \\| '_ \\| | | |  __/ _ \\| '__/ _ \\/ __| __| / _` |/ _ \\ \\ / /\n" +
+            "  / ____ \\| | | | |_| | | | (_) | | | | |_| | | | (_) | | |  __/\\__ \\ |_ | (_| |  __/\\ V / \n" +
+            " /_/    \\_\\_| |_|\\__|_| |_|\\___/|_| |_|\\__, |_|  \\___/|_|  \\___||___/\\__(_)__,_|\\___| \\_/ \n" +
+            "                                        __/ |                                              \n" +
+            "                                       |___/                                               \n\n]" +
+
+
             "[[b;#26761F;]Hi, let's explore my little box on the Internet!]\n\nType [[g;#26761F;]whoami] to read something about me, [[g;#26761F;]skills] to view my current ability with technologies, [[b;#26761F;]ls] to explore resources on this page and [[b;#26761F;]help] if you dont know what to do next.\n",
         prompt: function(p){
             var path = '~'
