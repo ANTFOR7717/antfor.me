@@ -71,7 +71,7 @@
     color: #000;
 }
 .terminal .terminal-output div.error, .terminal .terminal-output div.error div {
-    color: #b04343;
+    color: #8c4c4c;
 }
 .tilda {
     position: fixed;

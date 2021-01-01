@@ -17,7 +17,7 @@ var GitHub = new ( function() {
         if(this.stack.length === 0)
             return '~/';
         return this.stack.join('/')
-    },    
+    },
     this.getCurrentWorkingDirectory = function() {
         if(this.stack.length === 0)
             return this.fs;
@@ -49,7 +49,7 @@ var GitHub = new ( function() {
                     } else {
                        fs = fs[path]
                     }
-                       
+
                     if (i === paths.length - 1) {
                         item.path = path;
                         fs[path] = item;
@@ -62,6 +62,10 @@ var GitHub = new ( function() {
 })();
 
 var App = {
+    resume: function() {
+        this.echo("soon child")
+    },
+
     echo: function(text) {
         this.echo(text);
 
@@ -115,62 +119,67 @@ var App = {
 
     skills: function() {
         this.echo("");
-        this.echo( "|  [[g;#B2D100;]Legend:]                                                              |");
-        this.echo( "|  [[g;#00A6FC;]#] [[g;#AAAAAA;]Perfect]      (Rarely needs to view the documentation)              |");
-        this.echo( "|  [[g;#5BD100;]#] [[g;#AAAAAA;]Expert]       (Hardly needs to view the documentation)              |");
-        this.echo( "|  [[g;#B2D100;]#] [[g;#AAAAAA;]Proficient]   (Occasionally needs to view the documentation)        |");
-        this.echo( "|  [[g;#D13F00;]#] [[g;#AAAAAA;]Familiarity]  (Often needs to view the documentation)               |");
-        this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
-        this.echo("|  [[g;#B2D100;]Statistical Computing]\t\t\t\t\t\t\t\t\t\t\t    |");
-        this.echo("|  " + commandText('Python') + "                ##[[g;#5BD100;]#########################]                ##  |");
-        this.echo("|  " + commandText('bash') + "                  ##[[g;#5BD100;]###################]                      ##  |");
-        this.echo("|  " + commandText('Java') + "                  ##[[g;#B2D100;]#########]                                ##  |");
-        this.echo("|  " + commandText('C++') + "                   ##[[g;#B2D100;]#####]                                    ##  |");
-        this.echo("|  " + commandText('Perl') + "                  ##[[g;#D13F00;]####]                                     ##  |");
-        this.echo("|  " + commandText('Go') + "                    ##[[g;#D13F00;]###]                                      ##  |");
-        this.echo("|  " + commandText('Solidity') + "              ##[[g;#D13F00;]##]                                       ##  |");
-        this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
-        this.echo("|  [[g;#B2D100;]Frontend Technologies]\t\t\t\t\t\t\t\t\t\t\t\t|");
-        this.echo("|  " + commandText('Javascript') + "            ##[[g;#5BD100;]##########################]               ##  |");
-        this.echo("|  " + commandText('CSS') + "                   ##[[g;#B2D100;]#########################]                ##  |");
-        this.echo("|  " + commandText('HTML5') + "                 ##[[g;#B2D100;]########################]                 ##  |");
-        this.echo("|  " + commandText('PHP') + "                   ##[[g;#D13F00;]##########]                               ##  |");
-        this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
+        this.echo( "  [[g;#B2D100;]Legend:]                                                                             ");
+        this.echo( "  [[g;#00A6FC;]#] [[g;#AAAAAA;]Expert]               (Rarely needs to view the documentation)       ");
+        this.echo( "  [[g;#5BD100;]#] [[g;#AAAAAA;]Highly Proficient]    (Hardly needs to view the documentation)       ");
+        this.echo( "  [[g;#B2D100;]#] [[g;#AAAAAA;]Proficient]           (Occasionally needs to view the documentation) ");
+        this.echo( "  [[g;#D13F00;]#] [[g;#AAAAAA;]Familiar]             (Frequently needs to view the documentation)   ");
+        this.echo("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ");
+        this.echo("  [[g;#B2D100;]Programming Languages]\t\t\t\t\t\t\t\t\t\t\t    ");
+        this.echo("  " + commandText('HTML/CSS') + "              ##[[g;#00A6FC;]###################################]      ##  ");
+        this.echo("  " + commandText('Python') + "                ##[[g;#5BD100;]############################]             ##  ");
+        this.echo("  " + commandText('Javascript') + "            ##[[g;#5BD100;]##########################]               ##  ");
+        this.echo("  " + commandText('Liquid') + "                ##[[g;#5BD100;]#########################]                ##  ");
+        this.echo("  " + commandText('Java') + "                  ##[[g;#B2D100;]################]                         ##  ");
+        this.echo("  " + commandText('Typescript') + "            ##[[g;#B2D100;]###############]                          ##  ");
+        this.echo("  " + commandText('PHP') + "                   ##[[g;#B2D100;]##########]                               ##  ");
+        this.echo("  " + commandText('C++') + "                   ##[[g;#B2D100;]#########]                                ##  ");
+        this.echo("  " + commandText('Solidity') + "              ##[[g;#D13F00;]#####]                                    ##  ");
+        this.echo("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ");
         // this.echo("|  " + commandText("Database"));
-        this.echo("|  [[g;#B2D100;]Web Frameworks]\t\t\t\t\t\t\t\t\t\t\t           |");
-        this.echo("|  " + commandText('React') + "                 ##[[g;#5BD100;]###########]                              ##  |");
-        this.echo("|  " + commandText('Angular') + "               ##[[g;#5BD100;]#########]                                ##  |");
-        this.echo("|  " + commandText('Bootstrap') + "             ##[[g;#B2D100;]######]                                   ##  |");
-        this.echo("|  " + commandText('Django') + "                ##[[g;#B2D100;]#####]                                    ##  |");
-        this.echo("|  " + commandText('Ionic') + "                 ##[[g;#B2D100;]####]                                     ##  |");
-        this.echo("|  " + commandText('ASP.NET') + "               ##[[g;#D13F00;]##]                                       ##  |");
-        this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
+        this.echo("  [[g;#B2D100;]Web Frameworks]\t\t\t\t\t\t\t\t\t\t\t           ");
+        this.echo("  " + commandText('Nuxt.JS') + "               ##[[g;#5BD100;]#################################]        ##  ");
+        this.echo("  " + commandText('Vue.JS') + "                ##[[g;#5BD100;]##########################]               ##  ");
+        this.echo("  " + commandText('React') + "                 ##[[g;#5BD100;]#######################]                  ##  ");
+        this.echo("  " + commandText('Flask') + "                 ##[[g;#B2D100;]######################]                   ##  ");
+        this.echo("  " + commandText('Angular') + "               ##[[g;#B2D100;]##################]                       ##  ");
+        this.echo("  " + commandText('Ember.JS') + "              ##[[g;#B2D100;]###########]                              ##  ");
+        this.echo("  " + commandText('Meteor') + "                ##[[g;#B2D100;]##########]                               ##  ");
+        this.echo("  " + commandText('Gatsby') + "                ##[[g;#B2D100;]#########]                                ##  ");
+        this.echo("  " + commandText('Django') + "                ##[[g;#B2D100;]#######]                                  ##  ");
+        this.echo("  " + commandText('ASP.NET') + "               ##[[g;#D13F00;]##]                                       ##  ");
 
-        this.echo("|  [[g;#B2D100;]Cloud Computing]\t\t\t\t\t\t\t\t\t\t\t          |");
-        this.echo("|  " + commandText('AWS') + "                   ##[[g;#5BD100;]###########]                              ##  |");
-        this.echo("|  " + commandText('GCP') + "                   ##[[g;#5BD100;]###########]                              ##  |");
-        this.echo("|  " + commandText('Azure') + "                 ##[[g;#B2D100;]#########]                                ##  |");
-        this.echo("|  " + commandText('IBM') + "                   ##[[g;#B2D100;]#####]                                    ##  |");
-        this.echo("|  " + commandText('Heroku') + "                ##[[g;#D13F00;]###]                                      ##  |");
-        this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
+        this.echo("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ");
+
+        this.echo("  [[g;#B2D100;]Cloud Deployment]\t\t\t\t\t\t\t\t\t\t\t");
+        this.echo("  " + commandText('Netlify') + "               ##[[g;#5BD100;]################################]         ##  ");
+        this.echo("  " + commandText('Heroku') + "                ##[[g;#5BD100;]#############################]            ##  ");
+        this.echo("  " + commandText('Vercel') + "                ##[[g;#B2D100;]###################]                      ##  ");
+        this.echo("  " + commandText('AWS') + "                   ##[[g;#B2D100;]##################]                       ##  ");
+        this.echo("  " + commandText('GCP') + "                   ##[[g;#B2D100;]##############]                           ##  ");
+        this.echo("  " + commandText('Azure') + "                 ##[[g;#B2D100;]#########]                                ##  ");
+        this.echo("  " + commandText('IBM') + "                   ##[[g;#B2D100;]#####]                                    ##  ");
+        this.echo("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ");
         // this.echo("|");
-        this.echo("|  [[g;#B2D100;]Databases]\t\t\t\t\t\t\t\t\t\t\t                |");
-        this.echo("|  " + commandText('MySQL') + "                 ##[[g;#B2D100;]####################]                     ##  |");
-        this.echo("|  " + commandText('MongoDB') + "               ##[[g;#D13F00;]#########]                                ##  |");
-        this.echo("|  " + commandText('Oracle') + "                ##[[g;#D13F00;]#####]                                    ##  |");
-        this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
-        this.echo("|  [[g;#B2D100;]Operating Systems]\t\t\t\t\t\t\t\t\t\t\t        |");
+        this.echo("  [[g;#B2D100;]Databases]\t\t\t\t\t\t\t\t\t\t\t                ");
+        this.echo("  " + commandText('MySQL') + "                 ##[[g;#B2D100;]####################]                     ##  ");
+        this.echo("  " + commandText('MongoDB') + "               ##[[g;#D13F00;]#########]                                ##  ");
+        this.echo("  " + commandText('PostgreSQL') + "            ##[[g;#D13F00;]#######]                                  ##  ");
+        this.echo("  " + commandText('MariaDB') + "               ##[[g;#D13F00;]#####]                                    ##  ");
+        this.echo("  " + commandText('Oracle') + "                ##[[g;#D13F00;]####]                                     ##  ");
+        this.echo("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ");
+        this.echo("  [[g;#B2D100;]Operating Systems]\t\t\t\t\t\t\t\t\t\t\t        ");
         // this.echo("|  " + commandText("Native Mobile / Game Dev"));
         // this.echo("|");
-        this.echo("|  " + commandText('Linux') + "                 ##[[g;#5BD100;]################################]         ##  |");
-        this.echo("|  " + commandText('MAC OS') + "                ##[[g;#B2D100;]######################]                   ##  |");
-        this.echo("|  " + commandText('Windows') + "               ##[[g;#B2D100;]#####################]                    ##  |");
-        this.echo("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   |");
-        this.echo("|  [[g;#B2D100;]Languages]\t\t\t\t\t\t\t\t\t\t\t                |");
+        this.echo("  " + commandText('Linux') + "                 ##[[g;#5BD100;]################################]         ##  ");
+        this.echo("  " + commandText('MAC OS') + "                ##[[g;#5BD100;]##############################]           ##  ");
+        this.echo("  " + commandText('Windows') + "               ##[[g;#B2D100;]#############################]            ##  ");
+        this.echo("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t   ");
+        this.echo("  [[g;#B2D100;]Languages]\t\t\t\t\t\t\t\t\t\t\t                ");
         // this.echo("|");
-        this.echo("|  " + commandText('English') + "               ##[[g;#00A6FC;]#########################################]##  |");
-        this.echo("|  " + commandText('Spanish') + "               ##[[g;#B2D100;]#######]                                  ##  |");
-        this.echo("|  " + commandText('Japanese') + "              ##[[g;#D13F00;]###]                                      ##  |");
+        this.echo("  " + commandText('English') + "               ##[[g;#00A6FC;]#########################################]##  ");
+        this.echo("  " + commandText('Spanish') + "               ##[[g;#B2D100;]#######]                                  ##  ");
+        this.echo("  " + commandText('Japanese') + "              ##[[g;#D13F00;]###]                                      ##  ");
         this.echo("");
 
         if(ga !== undefined) ga('send', 'event', 'skills', GitHub.getCurrentPath());
@@ -222,7 +231,7 @@ var App = {
         if(path === '..') {
             GitHub.stack.pop();
             return;
-        }        
+        }
         var wd = GitHub.getCurrentWorkingDirectory();
         var item = wd[path];
         if(!item) {
@@ -249,7 +258,7 @@ var App = {
                 var content = data.content.trim()
                 if(data.encoding === 'base64')
                     content = decode64(content);
-                term.echo(content); 
+                term.echo(content);
                 term.resume();
             });
         }
