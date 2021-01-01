@@ -71,7 +71,7 @@
     color: #000;
 }
 .terminal .terminal-output div.error, .terminal .terminal-output div.error div {
-    color: red;
+    color: #b04343;
 }
 .tilda {
     position: fixed;
@@ -89,5 +89,5 @@
 }
 .terminal a:hover {
     text-decoration: underline;
-    
+
 }
