@@ -1,5 +1,5 @@
 var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/directory-antfor.me/git',
-    e = "guest@antfor.me";
+    e = "guest@anthonyforest.dev";
 
 var commandText = function(text) {
     return "[[g;#EEEEEE;]" + text + "]";
@@ -81,6 +81,7 @@ var App = {
         this.echo("Available commands:");
         this.echo("");
         this.echo("\t[[b;#26761F;]about]       information about this page.");
+        this.echo("\t[[b;#26761F;]resume]      view my resume.");
         this.echo("\t[[b;#26761F;]contact]     display contact information.");
         this.echo("\t[[b;#26761F;]cat]         view text files in directories.");
         this.echo("\t[[b;#26761F;]whoami]      display my short brief.");
@@ -95,7 +96,7 @@ var App = {
     },
     whoami: function() {
         this.echo("");
-        this.echo("Hello, my name is Anthony (aka [[g;#B2D100;]Anthony Forest]), I'm owner of several niche e-commerce websites and a private web development firm.");
+        this.echo("Hello, my name is [[g;#B2D100;]Anthony Forest], I'm owner of several niche e-commerce websites and a private web development firm.");
         this.echo("I'm a programmer, and Electronic Engineer (AAS). I love Open Source and passionate about contributions to Open Source projects.");
         this.echo("My technical summary:");
         this.echo("");
@@ -226,7 +227,7 @@ var App = {
         for(i in wd) {
             if(typeof wd[i] == 'object') {
                 var item = wd[i];
-                this.echo(item.mode+'  |\t' + (item.type=='tree'?'[[b;#0A8AFF;]'+item.path+']':item.path));
+                this.echo(item.mode+'  |\t' + (item.type==='tree'?'[[b;#0A8AFF;]'+item.path+']':item.path));
             }
         }
 
