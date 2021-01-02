@@ -1,4 +1,4 @@
-var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/directory-antfor.me/git',
+var API_PREFIX = 'https://api.github.com/repos/ANTFOR7717/anthonyforest.dev-wd/git',
     e = "guest@anthonyforest.dev";
 
 var commandText = function(text) {
